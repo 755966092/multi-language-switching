@@ -5,7 +5,7 @@
 
 利用文档碎片渲染dom, 整体替换dom树; 实现多语言切换的功能
 
-[查看示例]( http://www.yuanjingzhuang.com/multi-language-switching/.)
+[查看示例]( http://www.yuanjingzhuang.com/multi-language-switching/)
 
 
 # 使用方法
