@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多语言切换</title>
+</head>
+
+<body>
+
+    <div id="main">
+        <h1>{{name}}</h1>
+        <h1>{{test}}</h1>
+        <h1>{{obj.name}}</h1>
+        <h1 lang="attrTest"></h1>
+        <input type="text" name="" id="" lang-placeholder="attrTest">
+        <hr>
+        <div>
+            <button onclick="toggleLang('cn')">简体中文</button>
+            <button onclick="toggleLang('en')">English</button>
+            <button onclick="toggleLang('hk')">繁體中文</button>
+        </div>
+        <hr>
+
+        
+      
+    </div>
+
+
+    <script src="./js/language.js"></script>
+    <script src="http://mat1.gtimg.com/libs/jquery2/2.2.0/jquery.js"></script>
+    <script>
+        var language = {
+            en: {
+                "name": "English",
+                "test": "Test text",
+                "attrTest": "attr test",
+                "obj": {
+                    "name": "testing object"
+                }
+            },
+            cn: {
+                "name": "简体中文",
+                "test": "测试文本",
+                "attrTest": "属性测试",
+                "obj": {
+                    "name": "测试对象"
+                }
+            },
+            hk:
+
+
+            {
+                "name": "繁體中文",
+                "test": "測試文本",
+                "attrTest": "屬性測試",
+                "obj": {
+                    "name": "測試對象"
+                }
+            }
+        }
+        let defaultLang = language[localStorage.getItem('langType')] || language.cn
+        new Language('#main', defaultLang)
+
+        function toggleLang(type) {
+            localStorage.setItem('langType', type)
+            location.reload()
+        }
+    </script>
+</body>
+
+</html>
